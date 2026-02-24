@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dra. Leticia Solari — Médica ginecóloga y cirujana especializada en medicina reproductiva, histeroscopia, laparoscopía y trasplante uterino. Rosario, Argentina.">
+<meta name="keywords" content="ginecóloga Rosario, cirujana ginecológica, medicina reproductiva, histeroscopia, laparoscopía, fertilidad, Leticia Solari, trasplante uterino">
+<meta name="author" content="Dra. Leticia Solari">
+<meta property="og:title" content="Dra. Leticia Solari | Ginecología & Medicina Reproductiva">
+<meta property="og:description" content="Cirujana ginecóloga especializada en medicina reproductiva. Rosario, Argentina.">
+<meta property="og:type" content="website">
+<title>Dra. Leticia Solari | Ginecología & Cirugía Reproductiva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #F5F0E8; --ivory: #FAF7F2; --black: #0D0D0D; --charcoal: #2A2A2A;
+    --gold: #B89A5A; --gold-light: #D4B87A; --text-muted: #6B6055; --white: #FFFFFF;
+  }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Lato', sans-serif; background: var(--ivory); color: var(--charcoal); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; transition: background .4s, box-shadow .4s; }
+  nav.scrolled { background: rgba(245,240,232,0.96); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(184,154,90,.2); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--black); text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; color: var(--charcoal); transition: color .25s; font-weight: 400; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; padding: .55rem 1.5rem; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; transition: background .25s, color .25s; }
+  .nav-cta:hover { background: var(--gold); color: var(--white); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--charcoal); }
+
+  /* HERO */
+  #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
+  .hero-left { background: var(--black); display: flex; flex-direction: column; justify-content: flex-end; padding: 8rem 5rem 6rem; position: relative; overflow: hidden; }
+  .hero-left::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 60%, rgba(184,154,90,.12) 0%, transparent 65%); pointer-events: none; }
+  .hero-eyebrow { font-size: .68rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp .8s .3s forwards; }
+  .hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 5.5vw, 5.5rem); font-weight: 300; line-height: 1.05; color: var(--white); opacity: 0; animation: fadeUp .9s .5s forwards; }
+  .hero-name em { font-style: italic; color: var(--gold-light); }
+  .hero-tagline { margin-top: 2rem; font-size: .9rem; line-height: 1.8; color: rgba(255,255,255,.55); max-width: 360px; opacity: 0; animation: fadeUp .9s .7s forwards; font-weight: 300; }
+  .hero-actions { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; opacity: 0; animation: fadeUp .9s .9s forwards; }
+  .btn-primary { display: inline-flex; align-items: center; gap: .6rem; background: var(--gold); color: var(--black); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; padding: .85rem 2rem; text-decoration: none; font-weight: 700; transition: background .25s, transform .2s; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline { display: inline-flex; align-items: center; gap: .6rem; border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.8); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; padding: .85rem 2rem; text-decoration: none; transition: border-color .25s, color .25s; }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-right { background: var(--cream); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 8rem 4rem 4rem 5rem; position: relative; }
+  .hero-right::after { content: 'LS'; font-family: 'Cormorant Garamond', serif; font-size: 28vw; font-weight: 300; color: rgba(0,0,0,.04); position: absolute; right: -2vw; bottom: -4vw; line-height: 1; pointer-events: none; user-select: none; }
+  .hero-stats { display: flex; flex-direction: column; gap: 2.5rem; opacity: 0; animation: fadeLeft .9s .6s forwards; }
+  .stat { border-left: 2px solid var(--gold); padding-left: 1.25rem; }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; line-height: 1; color: var(--black); }
+  .stat-label { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--text-muted); margin-top: .25rem; }
+
+  /* SHARED */
+  section { padding: 7rem 0; }
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 4rem; }
+  .section-eyebrow { font-size: .65rem; letter-spacing: .35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 300; line-height: 1.15; color: var(--black); }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .divider { width: 48px; height: 1px; background: var(--gold); margin: 1.75rem 0; }
+  .section-text { font-size: .95rem; line-height: 1.9; color: var(--text-muted); max-width: 560px; font-weight: 300; }
+
+  /* SOBRE */
+  #sobre { background: var(--ivory); }
+  .sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .sobre-image-wrap { position: relative; }
+  .sobre-img-real { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; display: block; }
+  .sobre-badges { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2rem; }
+  .badge { font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; border: 1px solid rgba(184,154,90,.4); color: var(--gold); padding: .35rem .9rem; }
+  .sobre-content { padding-left: 1rem; }
+  .sobre-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-style: italic; font-weight: 300; color: var(--charcoal); line-height: 1.7; border-left: 2px solid var(--gold); padding-left: 1.5rem; margin: 2rem 0; }
+
+  /* ESPECIALIDADES */
+  #especialidades { background: var(--black); }
+  #especialidades .section-title { color: var(--white); }
+  #especialidades .section-text { color: rgba(255,255,255,.5); }
+  .espec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(184,154,90,.15); margin-top: 4rem; }
+  .espec-card { background: var(--black); padding: 3rem 2.5rem; transition: background .3s; position: relative; overflow: hidden; }
+  .espec-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .4s cubic-bezier(.4,0,.2,1); }
+  .espec-card:hover { background: #111; }
+  .espec-card:hover::after { transform: scaleX(1); }
+  .espec-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: rgba(184,154,90,.2); line-height: 1; margin-bottom: 1.5rem; }
+  .espec-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--white); margin-bottom: 1rem; }
+  .espec-text { font-size: .82rem; line-height: 1.8; color: rgba(255,255,255,.45); font-weight: 300; }
+
+  /* FORMACION */
+  #formacion { background: var(--ivory); }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 4rem; }
+  .form-col-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--black); margin-bottom: 1.5rem; padding-bottom: .75rem; border-bottom: 1px solid rgba(184,154,90,.3); }
+  .form-item { display: flex; gap: 1rem; margin-bottom: 1.25rem; align-items: flex-start; }
+  .form-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: .45rem; }
+  .form-text { font-size: .85rem; line-height: 1.75; color: var(--text-muted); font-weight: 300; }
+  .form-text strong { color: var(--charcoal); font-weight: 400; }
+
+  /* TRAYECTORIA */
+  #trayectoria { background: var(--cream); }
+  .tray-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: start; }
+  .tray-sticky { position: sticky; top: 7rem; }
+  .timeline { position: relative; margin-top: 1rem; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--gold), transparent); }
+  .tl-item { padding-left: 2rem; padding-bottom: 3rem; position: relative; }
+  .tl-item::before { content: ''; position: absolute; left: -4px; top: .5rem; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); border: 2px solid var(--cream); }
+  .tl-year { font-size: .65rem; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); margin-bottom: .5rem; }
+  .tl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; color: var(--black); margin-bottom: .4rem; }
+  .tl-desc { font-size: .82rem; line-height: 1.75; color: var(--text-muted); font-weight: 300; }
+
+  /* ENTIDADES */
+  #entidades { background: var(--black); }
+  #entidades .section-title { color: var(--white); }
+  #entidades .section-text { color: rgba(255,255,255,.5); }
+  .entidades-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(184,154,90,.12); margin-top: 4rem; }
+  .entidad-card { background: var(--black); padding: 2.5rem; transition: background .3s; }
+  .entidad-card:hover { background: #111; }
+  .entidad-sigla { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: .75rem; }
+  .entidad-nombre { font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: .75rem; font-weight: 300; }
+  .entidad-rol { font-size: .84rem; line-height: 1.65; color: rgba(255,255,255,.65); font-weight: 300; }
+
+  /* MEDIOS */
+  #medios { background: var(--ivory); }
+  .medios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(0,0,0,.07); margin-top: 4rem; }
+  .medio-card { background: var(--ivory); padding: 2.5rem; transition: background .3s; }
+  .medio-card:hover { background: var(--cream); }
+  .medio-icon { width: 36px; height: 36px; color: var(--gold); margin-bottom: 1.25rem; }
+  .medio-nombre { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--black); margin-bottom: .6rem; }
+  .medio-desc { font-size: .82rem; line-height: 1.75; color: var(--text-muted); font-weight: 300; }
+  .medio-link { display: inline-flex; align-items: center; gap: .4rem; margin-top: 1.25rem; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,154,90,.3); padding-bottom: .15rem; transition: border-color .25s, gap .2s; }
+  .medio-link:hover { border-color: var(--gold); gap: .65rem; }
+
+  /* CONSULTORIOS */
+  #consultorios { background: var(--cream); }
+  .consult-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: rgba(0,0,0,.07); margin-top: 4rem; }
+  .consult-card { background: var(--cream); padding: 3rem; transition: background .3s; }
+  .consult-card:hover { background: var(--ivory); }
+  .consult-icon { width: 40px; height: 40px; margin-bottom: 1.5rem; color: var(--gold); }
+  .consult-name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 500; color: var(--black); margin-bottom: .75rem; }
+  .consult-detail { font-size: .82rem; line-height: 1.85; color: var(--text-muted); font-weight: 300; }
+  .consult-detail strong { color: var(--charcoal); font-weight: 400; }
+  .consult-link { display: inline-flex; align-items: center; gap: .5rem; margin-top: 1.5rem; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,154,90,.3); padding-bottom: .2rem; transition: border-color .25s, gap .25s; }
+  .consult-link:hover { border-color: var(--gold); gap: .75rem; }
+
+  /* TURNOS */
+  #turnos { background: var(--black); text-align: center; padding: 6rem 0; }
+  #turnos .section-title { color: var(--white); }
+  #turnos .section-text { color: rgba(255,255,255,.5); margin: 0 auto; text-align: center; }
+  #turnos .divider { margin: 1.75rem auto; }
+  .turno-precio { display: inline-block; font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: rgba(255,255,255,.4); margin-top: 1rem; }
+  .turno-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem; }
+  .btn-gold { display: inline-flex; align-items: center; gap: .6rem; background: var(--gold); color: var(--black); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; padding: 1rem 2.5rem; text-decoration: none; font-weight: 700; transition: background .25s; }
+  .btn-gold:hover { background: var(--gold-light); }
+  .btn-ghost { display: inline-flex; align-items: center; gap: .6rem; border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.75); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; padding: 1rem 2.5rem; text-decoration: none; transition: border-color .25s, color .25s; }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* CONTACTO */
+  #contacto { background: var(--ivory); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .contact-item { display: flex; gap: 1.25rem; align-items: flex-start; margin-bottom: 2rem; }
+  .contact-icon { width: 20px; margin-top: .15rem; flex-shrink: 0; color: var(--gold); }
+  .contact-label { font-size: .62rem; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); margin-bottom: .35rem; }
+  .contact-val { font-size: .9rem; color: var(--charcoal); line-height: 1.6; font-weight: 300; }
+  .contact-val a { color: inherit; text-decoration: none; }
+  .contact-val a:hover { color: var(--gold); }
+  .social-links { display: flex; gap: 1rem; margin-top: 2.5rem; }
+  .social-link { width: 40px; height: 40px; border: 1px solid rgba(0,0,0,.15); display: flex; align-items: center; justify-content: center; color: var(--charcoal); text-decoration: none; transition: border-color .25s, color .25s; }
+  .social-link:hover { border-color: var(--gold); color: var(--gold); }
+  .contact-map { aspect-ratio: 4/3; overflow: hidden; }
+  .contact-map iframe { width: 100%; height: 100%; border: none; opacity: .7; }
+
+  /* FOOTER */
+  footer { background: var(--black); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: .95rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+  .footer-copy { font-size: .68rem; letter-spacing: .1em; color: rgba(255,255,255,.3); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeLeft { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: translateX(0); } }
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* MOBILE NAV */
+  .mobile-nav { display: none; position: fixed; inset: 0; z-index: 200; background: var(--black); flex-direction: column; align-items: center; justify-content: center; gap: 1.75rem; }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--white); text-decoration: none; font-weight: 300; transition: color .2s; }
+  .mobile-nav a:hover { color: var(--gold); }
+  .mobile-close { position: absolute; top: 1.5rem; right: 2rem; background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1100px) {
+    .entidades-grid, .medios-grid, .espec-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 1024px) {
+    nav { padding: 1.25rem 2rem; }
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .container { padding: 0 2rem; }
+    #hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 8rem 2rem 4rem; min-height: 100vh; }
+    .hero-right { display: none; }
+    .sobre-grid, .form-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .sobre-image-wrap { max-width: 380px; }
+    .tray-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .tray-sticky { position: static; }
+    .consult-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; text-align: center; }
+  }
+  @media (max-width: 700px) {
+    .espec-grid, .entidades-grid, .medios-grid { grid-template-columns: 1fr; }
+    section { padding: 5rem 0; }
+    footer { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="#" class="nav-logo">Dra. Leticia Solari</a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Perfil</a></li>
+    <li><a href="#especialidades">Especialidades</a></li>
+    <li><a href="#formacion">Formación</a></li>
+    <li><a href="#trayectoria">Trayectoria</a></li>
+    <li><a href="#entidades">Entidades</a></li>
+    <li><a href="#medios">Medios</a></li>
+    <li><a href="#consultorios">Consultorios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="https://consultoriomedicoaltoburo.site.agendapro.com/ar/sucursal/372763/profesional/606331" target="_blank" rel="noopener" class="nav-cta">Reservar Turno</a>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mobileClose" aria-label="Cerrar">✕</button>
+  <a href="#sobre" onclick="closeMobileNav()">Perfil</a>
+  <a href="#especialidades" onclick="closeMobileNav()">Especialidades</a>
+  <a href="#formacion" onclick="closeMobileNav()">Formación</a>
+  <a href="#trayectoria" onclick="closeMobileNav()">Trayectoria</a>
+  <a href="#entidades" onclick="closeMobileNav()">Entidades</a>
+  <a href="#medios" onclick="closeMobileNav()">Medios</a>
+  <a href="#consultorios" onclick="closeMobileNav()">Consultorios</a>
+  <a href="#contacto" onclick="closeMobileNav()">Contacto</a>
+  <a href="https://consultoriomedicoaltoburo.site.agendapro.com/ar/sucursal/372763/profesional/606331" target="_blank" rel="noopener" style="color:var(--gold);">Reservar Turno</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Ginecología · Cirugía · Medicina Reproductiva</div>
+    <h1 class="hero-name">Dra.<br>Leticia<br><em>Solari</em></h1>
+    <p class="hero-tagline">Médica ginecóloga y obstetra especializada en medicina reproductiva y cirugía mínimamente invasiva. Más de 25 años acompañando a las mujeres con humanidad y excelencia científica desde Rosario, Argentina.</p>
+    <div class="hero-actions">
+      <a href="https://consultoriomedicoaltoburo.site.agendapro.com/ar/sucursal/372763/profesional/606331" target="_blank" rel="noopener" class="btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Reservar Turno
+      </a>
+      <a href="#sobre" class="btn-outline">Conocer más</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">+25</div><div class="stat-label">Años de trayectoria</div></div>
+      <div class="stat"><div class="stat-num">FIGO</div><div class="stat-label">Congreso Mundial · Sudáfrica 2025</div></div>
+      <div class="stat"><div class="stat-num">ESHRE</div><div class="stat-label">Congreso Europeo · París 2025</div></div>
+      <div class="stat"><div class="stat-num">SAMeR</div><div class="stat-label">Secretaria General</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-image-wrap reveal">
+        <img src="dra-solari.webp" alt="Dra. Leticia Solari — Ginecóloga y Cirujana, Rosario Argentina" class="sobre-img-real" loading="lazy" decoding="async" width="400" height="600">
+        <div class="sobre-badges">
+          <span class="badge">SAMeR — Secretaria General</span>
+          <span class="badge">SACiG — Directora Académica</span>
+          <span class="badge">ININVI — Investigadora</span>
+          <span class="badge">Cirugía Robótica Certificada</span>
+          <span class="badge">Trasplante Uterino</span>
+          <span class="badge">Fertility &amp; Sterility</span>
+        </div>
+      </div>
+      <div class="sobre-content reveal">
+        <div class="section-eyebrow">Perfil Profesional</div>
+        <h2 class="section-title">Medicina con <em>pasión</em> y ciencia</h2>
+        <div class="divider"></div>
+        <p class="section-text">La Dra. Leticia Solari es médica ginecóloga y obstetra egresada de la Universidad Nacional de Rosario, especialista en Medicina Reproductiva y Cirugía Ginecológica Mínimamente Invasiva. Es referente nacional en histeroscopia, laparoscopía en fertilidad y pionera en el proyecto de trasplante uterino en Argentina.</p>
+        <blockquote class="sobre-quote">"Somos médicas, amigas, apasionadas con nuestro trabajo, dispuestas a dar lo mejor de nosotras desde lo profesional y lo humano."</blockquote>
+        <p class="section-text">Secretaria General de SAMeR, Directora Académica de los cursos de Cirugía Laparoscópica e Histeroscopía (SAMeR/SACiG), integrante del equipo internacional del Dr. Mats Bränndström (Suecia) e investigadora en el ININVI. Traductora para Latinoamérica de la revista <em>Fertility and Sterility</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPECIALIDADES -->
+<section id="especialidades">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Áreas de expertise</div>
+      <h2 class="section-title">Especialidades</h2>
+    </div>
+    <div class="espec-grid">
+      <div class="espec-card reveal"><div class="espec-num">01</div><div class="espec-title">Histeroscopia Diagnóstica y Quirúrgica</div><p class="espec-text">Evaluación directa de la cavidad uterina, en la mayoría de los casos sin anestesia y en consultorio. Diagnóstico de patologías que otros estudios no detectan. Certificada como Cirujana Histeroscopista por SAMeR.</p></div>
+      <div class="espec-card reveal"><div class="espec-num">02</div><div class="espec-title">Laparoscopía en Medicina Reproductiva</div><p class="espec-text">Técnica de alta precisión para el diagnóstico y tratamiento de endometriosis, miomas, malformaciones uterinas e infertilidad. Directora del Curso SAMeR-SACiG de Cirugía Laparoscópica.</p></div>
+      <div class="espec-card reveal"><div class="espec-num">03</div><div class="espec-title">Cirugía Robótica</div><p class="espec-text">Certificada en 2025. Plataforma robótica con visión 3D, control total y extrema precisión. Mayor seguridad, menor invasión y recuperación más rápida para la paciente.</p></div>
+      <div class="espec-card reveal"><div class="espec-num">04</div><div class="espec-title">Preservación de la Fertilidad</div><p class="espec-text">Vitrificación de ovocitos, ovodonación y gestación solidaria. Asesoramiento integral sobre opciones reproductivas para cada momento de la vida, con enfoque humano y científico actualizado.</p></div>
+      <div class="espec-card reveal"><div class="espec-num">05</div><div class="espec-title">Trasplante Uterino</div><p class="espec-text">Pionera en Argentina. Integrante del equipo internacional del Dr. Mats Bränndström (Suecia). Presente en el primer trasplante uterino con donante viva de Latinoamérica (São Paulo, 2024).</p></div>
+      <div class="espec-card reveal"><div class="espec-num">06</div><div class="espec-title">Endometriosis, Miomas y Microbiota</div><p class="espec-text">Tratamiento avanzado de endometriosis y adenomiosis. Ablación de miomas por radiofrecuencia (ambulatorio, sin cirugía tradicional). Investigación sobre microbiota del tracto genital y fertilidad.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMACIÓN -->
+<section id="formacion">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Educación y certificaciones</div>
+      <h2 class="section-title">Formación <em>académica</em></h2>
+      <div class="divider"></div>
+      <p class="section-text">Una base sólida construida en Argentina y enriquecida con formación continua en los centros más reconocidos del mundo.</p>
+    </div>
+    <div class="form-grid">
+      <div class="reveal">
+        <div class="form-col-title">Formación de base y certificaciones</div>
+        <div class="form-item"><div class="form-dot"></div><div class="form-text"><strong>Médica egresada de la Universidad Nacional de Rosario (UNR).</strong> Residencia y especialización en Ginecología y Obstetricia.</div></div>
+        <div class="form-item"><div class="form-dot"></div><div class="form-text"><strong>Especialista en Medicina Reproductiva</strong> certificada por SAMeR y por la Academia Nacional de Medicina.</div></div>
+        <div class="form-item"><div class="form-dot"></div><div class="form-text"><strong>Cirujana Histeroscopista y Laparoscopista</strong> certificada en Reproducción Humana por SAMeR — reconocimiento recuperado luego de casi 20 años de pausa institucional.</div></div>
+        <div class="form-item"><div class="form-dot"></div><div class="form-text"><strong>Certificación en Cirugía Robótica (2025)</strong> con capacitación internacional especializada en el uso de plataformas robóticas en ginecología.</div></div>
+        <div class="form-item"><div class="form-dot"></div><div class="form-text"><strong>Formación en Procuración de Órganos y Tejidos</strong> — pilar fundamental del proyecto de trasplante uterino en Argentina.</div></div>
+      </div>
+      <div class="reveal">
+        <div class="form-col-title">Capacitación y experiencia internacional</div>
+        <div class="form-item"><div class="form-dot"></div><div class="form-text"><strong>Equipo internacional del Dr. Mats Bränndström (Suecia)</strong> — más de 6 años de desarrollo en trasplante uterino. Participación directa en el primer trasplante con donante viva de Latinoamérica (Hospital das Clínicas, São Paulo, 2024).</div></div>
+        <div class="form-item"><div class="form-dot"></div><div class="form-text"><strong>ESHRE 2025 — París, Francia.</strong> Congreso Europeo de Medicina Reproductiva y Embriología. 4 días de actualización junto a referentes mundiales.</div></div>
+        <div class="form-item"><div class="form-dot"></div><div class="form-text"><strong>FIGO 2025 — Ciudad del Cabo, Sudáfrica.</strong> Congreso Mundial de Ginecología y Obstetricia. Compromiso con la reducción de la mortalidad materna a nivel global.</div></div>
+        <div class="form-item"><div class="form-dot"></div><div class="form-text"><strong>Latin American Forum — Instituto Johnson &amp; Johnson, São Paulo.</strong> Capacitación de alto nivel en endometriosis y oncología pelviana con especialistas de toda Latinoamérica.</div></div>
+        <div class="form-item"><div class="form-dot"></div><div class="form-text"><strong>Traductora para Latinoamérica</strong> de la revista <em>Fertility and Sterility</em> — una de las publicaciones científicas más importantes de la especialidad a nivel mundial (más de 18 meses en el panel internacional).</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAYECTORIA -->
+<section id="trayectoria">
+  <div class="container">
+    <div class="tray-grid">
+      <div class="tray-sticky reveal">
+        <div class="section-eyebrow">Recorrido científico</div>
+        <h2 class="section-title">Una trayectoria de <em>excelencia</em></h2>
+        <div class="divider"></div>
+        <p class="section-text">Más de 25 años de formación continua, docencia, investigación y actividad en las sociedades científicas más importantes del país y el mundo.</p>
+      </div>
+      <div class="timeline reveal">
+        <div class="tl-item">
+          <div class="tl-year">2025</div>
+          <div class="tl-title">Congreso FIGO — Ciudad del Cabo, Sudáfrica</div>
+          <p class="tl-desc">Participación en el Congreso Mundial de Ginecología y Obstetricia. Trabajo en mesas científicas sobre mortalidad materna y discriminación en salud femenina. Adhesión al muro internacional de compromisos por la salud de la mujer.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2025</div>
+          <div class="tl-title">ESHRE — París, Francia</div>
+          <p class="tl-desc">4 días de actividad académica intensa en el Congreso Europeo de Medicina Reproductiva y Embriología. Actualización junto a referentes mundiales de la especialidad.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2025</div>
+          <div class="tl-title">Secretaria General de SAMeR</div>
+          <p class="tl-desc">Asume la Secretaría General de la Sociedad Argentina de Medicina Reproductiva, sumando a su rol como Directora Académica del Curso de Cirugía Laparoscópica SAMeR-SACiG.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2025</div>
+          <div class="tl-title">Certificación en Cirugía Robótica</div>
+          <p class="tl-desc">Completa su formación en cirugía robótica para ofrecer a sus pacientes la técnica más precisa, segura y mínimamente invasiva disponible en ginecología.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2025</div>
+          <div class="tl-title">Congreso SOGBA — Mar del Plata</div>
+          <p class="tl-desc">Disertante, discutidora, integrante de mesa de expertos y presidenta de simposio representando a SAMeR y SACiG. Más de 25 años participando de este congreso de cierre académico anual.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2025</div>
+          <div class="tl-title">SACiG &amp; Jornadas de Otoño — Rosario</div>
+          <p class="tl-desc">Disertante en el Simposio de Endometriosis y docente en el Fellowship de Cirugía Ginecológica Mínimamente Invasiva. Histerectomía laparoscópica en situaciones complejas.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2024</div>
+          <div class="tl-title">Primer Trasplante Uterino con Donante Viva — Latinoamérica</div>
+          <p class="tl-desc">Participación directa en el histórico procedimiento en el Hospital das Clínicas de São Paulo, junto al equipo sueco del Dr. Mats Bränndström y los pioneros brasileños.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2024</div>
+          <div class="tl-title">FASGO — Neuquén, Patagonia</div>
+          <p class="tl-desc">Disertante en el Congreso Argentino de Ginecología y Obstetricia: malformaciones uterinas y su resolución histeroscópica, e histerectomía subtotal e indicaciones.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">Investigación</div>
+          <div class="tl-title">ININVI — Microbioma vaginal y endometrial</div>
+          <p class="tl-desc">Presentación del trabajo "Análisis comparativo del microbioma vaginal y endometrial en mujeres en edad reproductiva" en las jornadas científicas del IUNIR - Rosario.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">Docencia</div>
+          <div class="tl-title">Relato Oficial ASOGIR</div>
+          <p class="tl-desc">"La Revolución de la Mini Invasión en Cirugía Ginecológica" — máximo reconocimiento honorífico de la Asociación Rosarina de Ginecología y Obstetricia, elegida por sus propios pares.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2022</div>
+          <div class="tl-title">Gestación Solidaria — Rosario</div>
+          <p class="tl-desc">Lideró con éxito un caso de gestación por sustitución en Rosario, sentando precedentes en la región. Una historia que demuestra que es posible hacerlo localmente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENTIDADES -->
+<section id="entidades">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Sociedades científicas</div>
+      <h2 class="section-title" style="color:var(--white)">Entidades de <em>colaboración</em></h2>
+      <div class="divider"></div>
+      <p class="section-text">Comprometida con el avance de la medicina reproductiva y la cirugía ginecológica a través del trabajo activo en las principales sociedades científicas del país.</p>
+    </div>
+    <div class="entidades-grid">
+      <div class="entidad-card reveal">
+        <div class="entidad-sigla">SAMeR</div>
+        <div class="entidad-nombre">Sociedad Argentina de Medicina Reproductiva</div>
+        <div class="entidad-rol">Secretaria General · Docente y Directora Académica en cursos de cirugía laparoscópica e histeroscopía · Miembro del tribunal evaluador de certificaciones quirúrgicas.</div>
+      </div>
+      <div class="entidad-card reveal">
+        <div class="entidad-sigla">SACiG</div>
+        <div class="entidad-nombre">Sociedad Argentina de Cirugía Ginecológica</div>
+        <div class="entidad-rol">Directora Académica del Curso de Cirugía Laparoscópica en Medicina Reproductiva · Docente del Fellowship · Disertante y conferencista en congresos anuales.</div>
+      </div>
+      <div class="entidad-card reveal">
+        <div class="entidad-sigla">ASOGIR</div>
+        <div class="entidad-nombre">Asociación Rosarina de Ginecología y Obstetricia</div>
+        <div class="entidad-rol">Miembro activa · Relato Oficial de Ginecología: máximo reconocimiento honorífico de la entidad, elegida por sus pares con el tema "La Revolución de la Mini Invasión".</div>
+      </div>
+      <div class="entidad-card reveal">
+        <div class="entidad-sigla">FASGO</div>
+        <div class="entidad-nombre">Federación Argentina de Sociedades de Ginecología y Obstetricia</div>
+        <div class="entidad-rol">Disertante en el Congreso Argentino de Ginecología y Obstetricia — FASGO 2024, Neuquén. Simposio de cirugía mínimamente invasiva ginecológica.</div>
+      </div>
+      <div class="entidad-card reveal">
+        <div class="entidad-sigla">ININVI</div>
+        <div class="entidad-nombre">Instituto de Investigaciones en Virología e Inmunología</div>
+        <div class="entidad-rol">Investigadora del Grupo de Investigación en Reproducción y Salud General · Publicaciones sobre microbioma vaginal, endometrial y su relación con la fertilidad.</div>
+      </div>
+      <div class="entidad-card reveal">
+        <div class="entidad-sigla">IUNIR</div>
+        <div class="entidad-nombre">Instituto Universitario Italiano de Rosario</div>
+        <div class="entidad-rol">Docencia e investigación científica · Presentación de trabajos académicos en jornadas universitarias · Vinculación permanente con la comunidad científica local.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIOS -->
+<section id="medios">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Divulgación y medios</div>
+      <h2 class="section-title">La ciencia <em>para todos</em></h2>
+      <div class="divider"></div>
+      <p class="section-text">Comprometida con la educación en salud femenina, la Dra. Solari lleva su conocimiento a televisión, radio, YouTube y plataformas digitales para acercar información precisa a todas las mujeres.</p>
+    </div>
+    <div class="medios-grid">
+      <div class="medio-card reveal">
+        <svg class="medio-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        <div class="medio-nombre">Televida con Salud</div>
+        <p class="medio-desc">Columnista en televisión con segmentos sobre endometriosis, preservación de la fertilidad y salud reproductiva femenina. Divulgación accesible y rigurosa para el público general.</p>
+        <a href="https://www.youtube.com/live/2mcreBDOIkU?si=NwWn8-akeqPKJuY3" target="_blank" rel="noopener" class="medio-link">Ver en YouTube →</a>
+      </div>
+      <div class="medio-card reveal">
+        <svg class="medio-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        <div class="medio-nombre">La Oficina — YouTube</div>
+        <p class="medio-desc">Charla sobre la postergación de la maternidad y la vitrificación de óvulos como herramienta de autonomía reproductiva. Información precisa para tomar decisiones informadas.</p>
+        <a href="https://www.youtube.com/@LaOficinaok" target="_blank" rel="noopener" class="medio-link">Ver canal →</a>
+      </div>
+      <div class="medio-card reveal">
+        <svg class="medio-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <div class="medio-nombre">Instagram @letisolari</div>
+        <p class="medio-desc">Canal principal de divulgación: procedimientos, novedades científicas, congresos internacionales y concientización sobre endometriosis, fertilidad y trasplante uterino.</p>
+        <a href="https://www.instagram.com/letisolari/" target="_blank" rel="noopener" class="medio-link">Seguir →</a>
+      </div>
+      <div class="medio-card reveal">
+        <svg class="medio-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        <div class="medio-nombre">Reinventadas</div>
+        <p class="medio-desc">Entrevista sobre el fenómeno social de postergación de la maternidad: biología, opciones disponibles y el rol de la medicina reproductiva moderna en la vida de las mujeres.</p>
+        <a href="https://www.youtube.com/live/2mcreBDOIkU?si=NwWn8-akeqPKJuY3" target="_blank" rel="noopener" class="medio-link">Ver entrevista →</a>
+      </div>
+      <div class="medio-card reveal">
+        <svg class="medio-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div class="medio-nombre">Fertility &amp; Sterility</div>
+        <p class="medio-desc">Traductora para Latinoamérica de una de las revistas científicas más importantes del mundo en medicina reproductiva. Más de 18 meses en el panel internacional de traductores.</p>
+      </div>
+      <div class="medio-card reveal">
+        <svg class="medio-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <div class="medio-nombre">Medios gráficos y radio</div>
+        <p class="medio-desc">Participaciones en medios escritos y radiales sobre trasplante uterino, gestación solidaria y avances en cirugía ginecológica. Referente consultada para notas especializadas en salud.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTORIOS -->
+<section id="consultorios">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Donde encontrarme</div>
+      <h2 class="section-title">Mis <em>consultorios</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="consult-grid">
+      <div class="consult-card reveal">
+        <svg class="consult-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <div class="consult-name">Consultorio Alto Buró</div>
+        <p class="consult-detail">
+          <strong>Dirección:</strong> Junín 191, S2013, Rosario, Santa Fe<br>
+          <strong>Teléfonos:</strong> +54 9 341 598-8911 · +54 9 341 373-3898<br>
+          <strong>Días de atención:</strong> Martes y Viernes<br><br>
+          Consulta presencial y virtual · 20 min<br>
+          Honorarios y turnos disponibles en AgendaPro
+        </p>
+        <a href="https://consultoriomedicoaltoburo.site.agendapro.com/ar/sucursal/372763/profesional/606331" target="_blank" rel="noopener" class="consult-link">Sacar turno online →</a>
+      </div>
+      <div class="consult-card reveal">
+        <svg class="consult-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <div class="consult-name">Grupo Centro — Rosario</div>
+        <p class="consult-detail">
+          <strong>Sanatorio Centro:</strong> Paraguay 975, Rosario<br>
+          <strong>Instituto Médico Centro:</strong> Balcarce 421, Pisos 6, 7, 8 y 9<br>
+          <strong>Medicina Reproductiva:</strong> Balcarce 421, Piso 10<br><br>
+          <strong>Teléfono:</strong> (341) 530-9000<br>
+          <strong>E-mail:</strong> <a href="mailto:info@grupocentro.ar">info@grupocentro.ar</a>
+        </p>
+        <a href="tel:+543415309000" class="consult-link">Llamar al consultorio →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TURNOS CTA -->
+<section id="turnos">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Agenda tu consulta</div>
+      <h2 class="section-title">¿Lista para<br><em>dar el primer paso?</em></h2>
+      <div class="divider"></div>
+      <p class="section-text">Cada paciente merece atención personalizada, cálida y al más alto nivel científico. Reservá tu turno online o escribime directamente por WhatsApp.</p>
+      <div class="turno-precio">Consulta presencial y virtual · Martes y Viernes · Honorarios en AgendaPro</div>
+    </div>
+    <div class="turno-actions reveal">
+      <a href="https://consultoriomedicoaltoburo.site.agendapro.com/ar/sucursal/372763/profesional/606331" target="_blank" rel="noopener" class="btn-gold">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Reservar Turno Online
+      </a>
+      <a href="https://wa.me/5493413733898" target="_blank" rel="noopener" class="btn-ghost">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Consultar por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:3.5rem">
+      <div class="section-eyebrow">Contacto</div>
+      <h2 class="section-title">Estoy para <em>ayudarte</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><div class="contact-label">Consultorio Alto Buró</div><div class="contact-val">Junín 191, S2013<br>Rosario, Santa Fe, Argentina</div></div>
+        </div>
+        <div class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 11.18a19.79 19.79 0 01-3.07-8.67A2 2 0 011.92 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+          <div><div class="contact-label">WhatsApp</div><div class="contact-val"><a href="https://wa.me/5493413733898">+54 9 341 373-3898</a><br><a href="https://wa.me/5493415988911">+54 9 341 598-8911</a></div></div>
+        </div>
+        <div class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <div><div class="contact-label">Instagram</div><div class="contact-val"><a href="https://www.instagram.com/letisolari/" target="_blank" rel="noopener">@letisolari</a></div></div>
+        </div>
+        <div class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div><div class="contact-label">Email — Grupo Centro</div><div class="contact-val"><a href="mailto:info@grupocentro.ar">info@grupocentro.ar</a></div></div>
+        </div>
+        <div class="social-links">
+          <a href="https://www.instagram.com/letisolari/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://wa.me/5493413733898" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></a>
+          <a href="https://consultoriomedicoaltoburo.site.agendapro.com/ar/sucursal/372763/profesional/606331" target="_blank" rel="noopener" class="social-link" aria-label="Turnos"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></a>
+        </div>
+      </div>
+      <div class="contact-map reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.4673186703937!2d-60.65127!3d-32.94742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b652b5aa3a7b8b%3A0x0!2sJun%C3%ADn%20191%2C%20S2013%20Rosario%2C%20Santa%20Fe!5e0!3m2!1ses!2sar!4v1700000000000"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Consultorio Dra. Leticia Solari — Junín 191, Rosario">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Dra. Leticia Solari · Ginecología &amp; Cirugía Reproductiva</div>
+  <div class="footer-copy">Rosario, Santa Fe, Argentina · <a href="mailto:info@grupocentro.ar" style="color:inherit;text-decoration:none">info@grupocentro.ar</a></div>
+</footer>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+  document.getElementById('hamburgerBtn').addEventListener('click', () => { document.getElementById('mobileNav').classList.add('open'); document.body.style.overflow = 'hidden'; });
+  document.getElementById('mobileClose').addEventListener('click', closeMobileNav);
+  function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.body.style.overflow = ''; }
+  const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
